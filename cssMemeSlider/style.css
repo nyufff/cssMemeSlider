@@ -18,10 +18,11 @@ label {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2rem;
+  height: 2rem;
   background-color: transparent;
 	cursor: pointer;
+	transition: background-color .3s ease-in-out;
 }
 
 /* Slider */
@@ -29,23 +30,25 @@ label {
 	height: 100vh;
 	width: 100vw;
 	max-width: 100vw;
-	padding: 3% 10%;
+	padding: 3rem;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: flex-start;
-	gap: 3rem;
+	gap: 2rem;
+	background-color: #021410;
 }
 .slider__wrapper{
-	width: 70%;
-	height: auto;
+	width: 60%;
 	overflow: hidden;
-	border: 1px solid green;
+	border-radius: 2%;
+	box-shadow: 0 0 30px 10px #48abe0;
 }
 .slider__items{
 	display: flex;
 	justify-content: flex-start;
 	align-items: stretch;
+	transition: transform .7s ease-in-out;
 }
 .slider__item{
 	flex: 100% 0 0;
@@ -57,36 +60,42 @@ label {
 
 .slider__controls{
 	display: flex;
-	width: 70%;
+	width: 60%;
 	justify-content: space-between;
 }
 .slider__text{
+	width: 25%;
 	height: 3rem;
 	overflow: hidden;
 }
 .slider__text-items{
 	display: flex;
 	justify-content: flex-start;
+	transition: transform .8s ease-in-out;
 }
 .slider__text-items p{
 	flex: 100% 0 0;
 	line-height: 3rem;
+	color: #99c4db;
 }
 
 .slider__pag{
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-	gap: .5rem;
+	gap: .3rem;
 }
 .slider__label{
-	width: 1.8rem;
-  height: 1.8rem;
-	border: solid green;
+	width: 1.3rem;
+  height: 1.3rem;
+	border: solid #48abe0;
   border-radius: 50%;
 }
-.slider__label:hover{
-  background-color: yellow;
+label:hover .slider__label{
+	box-shadow: 0 0 10px 5px #48abe0;
+}
+label:active .slider__label{
+  background-color: #48abe0;
 }
 
 /* Move slides and change text */
@@ -112,5 +121,5 @@ label {
 #slideTwo:checked ~ .slider__controls .slider__label-two,
 #slideThree:checked ~ .slider__controls .slider__label-three,
 #slideFour:checked ~ .slider__controls .slider__label-four{
-	background-color: green;
+	background-color: #48abe0;
 }
